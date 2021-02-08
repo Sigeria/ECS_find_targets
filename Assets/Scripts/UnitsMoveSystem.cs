@@ -137,8 +137,8 @@ public class UnitsMoveSystem : SystemBase, ICustomUpdateSystem {
 	}
 
 	private static void Clamp(ref float3 trans, int size) {
-		var x = Mathf.Clamp(trans.x, 0.5f, size - 0.5f);
-		var z = Mathf.Clamp(trans.z, 0.5f, size - 0.5f);
+		var x = Mathf.Clamp(trans.x, 0, size);
+		var z = Mathf.Clamp(trans.z, 0, size);
 		var max = new float3(x, 0, z);
 		trans = max;
 	}
